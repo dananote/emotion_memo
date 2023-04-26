@@ -179,7 +179,6 @@ ul {
 .list-box {
     height: 800px;
     overflow: scroll;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
