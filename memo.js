@@ -37,7 +37,6 @@ const save = (totalMemos) => {
 // 변수 모음
 const inputTitle = document.querySelector('.memo-title');
 const inputContent = document.querySelector('.memo-content');
-const content = document.getElementById('memo-content')
 const submitBtn = document.querySelector('form > .main-button');
 const memoBox = document.querySelector('.list-box')
 const emptyText = document.querySelector('.empty-text')
