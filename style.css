@@ -1,0 +1,347 @@
+/* font 확장자 별로 추가하기 */
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    font-weight: 300;
+    src: url(./font/Pretendard-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard-Semibold';
+    font-weight: 500;
+    src: url(./font/Pretendard-SemiBold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard-Bold';
+    font-weight: 800;
+    src: url(./font/Pretendard-Bold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Roboto-italic';
+    font-weight: 300;
+    src: url(./font/Roboto-LightItalic.woff) format('woff');
+}
+
+
+
+html {
+    font-size: 16px;
+}
+
+/* reset */
+img {
+    vertical-align: top;
+}
+
+button {
+    all: unset;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: initial;
+    padding: initial;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+
+/* component */
+
+:root {
+    font-family: 'Pretendard-Regular';
+    --grayFont: #979797;
+    --darkGrayFont: #4B4B4B;
+    --grayLine: #DADADA;
+    --mainColor: #000000;
+    --subColor: #ffffff;
+    --bgColor: #F8F8FC;
+}
+
+.main-button {
+    background-color: var(--mainColor);
+    color: white;
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    padding: 1.75rem;
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.main-button:focus-visible {
+    outline: 3px solid var(--grayFont);
+}
+
+.main-button:hover {
+    background-color: var(--grayFont);
+}
+
+
+input,
+textarea {      
+    width: 100%;
+    border: 1px solid var(--grayLine);
+    display: block;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    font-size: 1rem;
+    resize: none;
+    transition: all .5s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--grayFont)
+}
+
+input:focus-visible,
+textarea:focus-visible  {
+    outline: 3px solid var(--mainColor);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.wrap {
+    /* background-color: salmon; */
+    display: flex;
+    margin: 0 auto;
+    width: 1200px;
+    padding: 0 30px;
+    gap: 56px;
+    justify-content: center;
+}
+
+article,
+ul {
+    width: 100%;
+}
+
+
+/* input-box */
+.title {
+    font-family: 'Pretendard-Bold';
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.sub-title {
+    font-size: 1.2rem;
+    color: var(--grayFont);
+    margin-bottom: 5rem;
+}
+
+.main-img {
+    width: 100%;
+}
+
+.memo-title {
+    height: 4.5rem;
+
+}
+
+.memo-content {
+    height: 12.5rem;
+    font-family: 'Pretendard-Regular';
+    margin-top: 1.5rem;
+    /* 150자 제한 */
+}
+
+
+.count {
+    display: block;
+    text-align: right;
+    color: #ACACAC;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+
+
+/* memo-list */
+.list-box {
+    height: 800px;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-text {
+    font-size: 1.2em;
+    color: var(--grayFont);
+    text-align: center;
+}
+
+.memos-item {
+    background-color: var(--bgColor);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    border: 1px solid var(--grayLine);
+    border-radius: 0.75rem;
+}
+
+.memos-item + .memos-item {
+    margin-top: 2rem;
+}
+
+.memos-title {
+    font-size: 1.5rem;
+    font-family: 'Pretendard-Semibold';
+}
+
+.date {
+    font-size: 0.9rem;
+    font-family: 'Roboto-italic';
+    color: var(--grayFont);
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.memos-content {
+    font-size: 1rem;
+    color: var(--darkGrayFont);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.memos-button {
+    background-color: var(--mainColor);
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.memos-button:focus-visible {
+    outline: 3px solid var(--grayFont);
+}
+
+.memos-button:hover {
+    background-color: var(--grayFont);
+}
+
+
+dialog  {
+    width: 36rem;
+    background-color: var(--mainColor);
+    border-radius: 0.75rem;
+    padding: 0;
+
+}
+
+.dialog-wrap {
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    justify-content: space-around;
+    display: flex;
+    /* padding: 1.5rem; */
+}
+
+dialog img {
+    width: 34%;
+    /* background: blue; */
+}
+
+.dialog-left-box {
+    width: 50%;
+    display: flex;
+    padding: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    color: var(--subColor);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.close-btn {
+    font-family: 'Pretendard-Bold';
+    width: 100%;
+    text-align: center;
+    background-color: var(--subColor);
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+dialog::backdrop {
+    background-color: #fff;
+    opacity: 0.9;
+}
+
+
+/* 반응형 */
+@media (max-width: 780px) {
+
+    body {
+        align-items: start;
+    }
+    .wrap {
+        margin: 100px 0;
+        flex-direction: column;
+    }
+
+    /* left-box */
+    #list-box {
+        height: initial;
+        overflow: visible;
+        margin-bottom: 100px;
+    }
+
+    /* dialog */
+
+    
+    h3 {
+        color: var(--subColor);
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+
+    .close-btn {
+        font-family: 'Pretendard-Bold';
+        width: 100%;
+        text-align: center;
+        background-color: var(--subColor);
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+        padding: 1.25rem;
+        box-sizing: border-box;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-top: 2rem;
+    }
+    
+
+    
+}
+
