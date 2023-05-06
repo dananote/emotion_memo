@@ -9,6 +9,8 @@
 //*   2-3 저장과 동시에 인풋창이 초기화
 //*   2-4 저장을 누른 시점의 날짜 기록
 //   2-5 삭제버튼을 누르면 다시 '현재 입력된 todo가 없습니다' 텍스트가 돌아와야함
+//   2-6 새로 추가 되는 메모가 제일 위로 올라와야함
+
 //* 3. 삭제 기능
 //*   3-1 삭제하면 화면에서 사라짐
 //* 4. 입력한 데이터 웹 스토리지에 저장
@@ -80,8 +82,6 @@ const addItem = (memo) => {
     memoList.append(memoTitle, memoDate, memoContent, delBtn);
     memoBox.append(memoList);
     memoList.id = memo.id;
-  } else {
-    alert("뭐가 힘들었는지 알려주세요!");
   }
 };
 
@@ -102,10 +102,19 @@ const handler = (event) => {
   save(totalMemos);
   init();
 
+  animation();
+
   inputTitle.value = "";
   inputContent.value = "";
   count.textContent = "0 / 150";
 };
+
+//!메모 애니메이션
+// 새로 생성되는 애를 하면 되는데 그 대상을 메모 박스 추가되는 가장 마지막 자식으로 하면될듯
+const animation = () => {
+  memoBox.lastChild.classList.add("addanimation")
+}
+
 
 const init = () => {
   const userMemo = JSON.parse(localStorage.getItem("totalMemos")) ?? [];

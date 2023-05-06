@@ -196,6 +196,10 @@ ul {
     border-radius: 0.75rem;
 }
 
+.addanimation {
+    animation: memo 0.5s ease-in-out;
+}
+
 .memos-item + .memos-item {
     margin-top: 2rem;
 }
@@ -241,11 +245,16 @@ ul {
 }
 
 
+
+/* modal */
+
 dialog  {
     width: 36rem;
     background-color: var(--mainColor);
     border-radius: 0.75rem;
     padding: 0;
+
+    animation: showmodal 0.5s ease-in-out;
 
 }
 
@@ -295,6 +304,34 @@ h3 {
 dialog::backdrop {
     background-color: #fff;
     opacity: 0.9;
+}
+
+
+/* animation */
+
+@keyframes showmodal {
+    from  {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+@keyframes memo {
+    from  {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
 
 
